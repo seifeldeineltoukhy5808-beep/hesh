@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday 3amy Hesham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Lilita+One&family=Nunito+Sans:wght@400;700&family=Amiri:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a warm, hand-made greeting card from a nephew
+   IDEA: a paper greeting card: cut-paper letters, a cake on a sunburst, notes taped to a wall
+   PICTURE: patterned cut-paper HAPPY BIRTHDAY, then a cake whose candles you blow out
+   COLOUR and TYPE: cream paper, card green, sky and coral; Lilita One letters, Fraunces serif, Nunito Sans
+   LAYOUT: letters band, sunburst card with cake, message, wish wall */
+:root{color-scheme:light;--cream:#fbf3dc;--paper:#fffdf7;--green:#3d8569;--green2:#2c6a52;--teal:#4fb39a;
+  --sky:#bdf1f6;--coral:#ef7d5a;--ink:#1f2a2a;--muted:#55605d}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Nunito Sans",system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(28px,5vw,72px) max(5vw,16px)}
+.wrap{max-width:1140px;margin:0 auto}
+.hero{background:var(--cream);text-align:center;position:relative;overflow:hidden}
+.letters{width:min(100%,900px);height:auto;display:block;margin:0 auto}
+.to{font:800 clamp(30px,5.5vw,54px)/1.05 Fraunces,Georgia,serif;margin:6px 0 4px;text-wrap:balance}
+.ar{font:700 clamp(28px,5vw,44px)/1.4 Amiri,serif;color:var(--green);margin:0}
+.spark{position:absolute;fill:var(--green);opacity:.8}
+.cardzone{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.kicker{color:var(--green);font-weight:700;margin:0 0 6px}
+h2{font:800 clamp(32px,4.6vw,48px)/1.08 Fraunces,Georgia,serif;margin:0 0 14px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 24px;max-width:46ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+button{font:700 17px "Nunito Sans",sans-serif;min-height:52px;padding:0 30px;border-radius:999px;cursor:pointer;
+  border:2px solid var(--green);background:var(--green);color:#fff;transition:background .2s}
+button:hover{background:var(--green2)}
+button.ghost{background:#fff;color:var(--green)}
+button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.count{color:var(--muted);font-weight:700}
+.burst{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+.burst>svg.rays{position:absolute;inset:0;width:100%;height:100%}
+.cakecard{position:absolute;inset:17% 5%;background:#fff;border-radius:18px;box-shadow:0 18px 40px -16px #1f2a2a40;
+  display:flex;align-items:center;justify-content:center;padding:10px}
+.cake{width:100%;height:100%}
+.candle{cursor:pointer;outline:none}
+.candle:focus-visible .ring{stroke:var(--coral);stroke-width:3}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick .5s ease-in-out infinite alternate}
+.candle:nth-of-type(2n) .flame{animation-duration:.4s}
+@keyframes flick{from{transform:scale(1,1) rotate(-3deg)}to{transform:scale(.9,1.12) rotate(3deg)}}
+.out .flame{animation:none;opacity:0;transition:opacity .25s}
+.smoke{opacity:0}.out .smoke{animation:rise 1.4s ease-out forwards}
+@keyframes rise{0%{opacity:.7;transform:translateY(0)}100%{opacity:0;transform:translateY(-34px)}}
+.reveal{display:none}.done .reveal{display:block;animation:pop .7s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.msg{background:var(--sky);background-image:repeating-linear-gradient(170deg,#ffffff30 0 6px,transparent 6px 14px)}
+.letter{max-width:720px;margin:0 auto;background:#fff;border-radius:18px;padding:clamp(24px,5vw,52px);box-shadow:0 18px 40px -18px #1f2a2a40;text-align:center}
+.letter p{margin:0 0 14px}
+.sig{font:600 26px Fraunces,serif;color:var(--green);margin-top:18px!important}
+.wall{background:#2e3532;color:#fff}
+.wall h3{font:800 clamp(28px,4vw,40px)/1.1 Fraunces,serif;margin:0 0 26px;text-align:center}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px}
+.note{background:#fff;color:var(--ink);padding:26px 18px 18px;border-radius:4px;position:relative;
+  font:600 18px/1.35 Fraunces,serif;box-shadow:0 10px 22px -10px #0008}
+.note:nth-child(3n+1){transform:rotate(-1.5deg)}.note:nth-child(3n+2){transform:rotate(1.2deg)}
+.note::before{content:"";position:absolute;top:-10px;left:50%;width:76px;height:22px;transform:translateX(-50%) rotate(-3deg);
+  background:var(--tape,#f6d75a);opacity:.9}
+.note code{display:block;font:500 13px "JetBrains Mono",monospace;color:var(--green);margin-top:10px}
+footer{text-align:center;color:#c9d2cf;background:#2e3532;padding:0 16px 34px;font-size:14px}
+canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+@media(max-width:760px){.cardzone{grid-template-columns:minmax(0,1fr);text-align:center}.btns{justify-content:center}.lead{margin-inline:auto}}
+@media(prefers-reduced-motion:reduce){.flame,.out .smoke,.done .reveal{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<main id="app">
+  <header class="band hero">
+    <svg class="spark" style="left:6%;top:18%" width="34" height="34" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+    <svg class="spark" style="left:11%;top:34%" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+    <svg class="spark" style="right:7%;top:60%" width="30" height="30" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+    <div class="wrap">
+      <svg class="letters" viewBox="0 0 900 330" role="img" aria-label="Happy Birthday">
+        <defs>
+          <pattern id="p1" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#8fd16b"/><rect width="6" height="6" fill="#6fb34f"/></pattern>
+          <pattern id="p2" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(8)"><rect width="12" height="12" fill="#2f6fa8"/><rect width="4" height="12" fill="#4c8fc7"/></pattern>
+          <pattern id="p3" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#9fe0c8"/><path d="M0 9h18M9 0v18" stroke="#6cc2a5" stroke-width="3"/></pattern>
+          <pattern id="p4" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#3d8569"/><circle cx="10" cy="10" r="5" fill="#2c6a52"/></pattern>
+          <pattern id="p5" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#ef7d5a"/><path d="M0 16L16 0" stroke="#f7a283" stroke-width="5"/></pattern>
+          <pattern id="p6" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#f3c845"/><circle cx="6" cy="6" r="2.5" fill="#fff6"/></pattern>
+        </defs>
+        <text x="450" y="148" text-anchor="middle" font-family="Lilita One, sans-serif" font-size="150" letter-spacing="4" id="row1"></text>
+        <text x="450" y="300" text-anchor="middle" font-family="Lilita One, sans-serif" font-size="150" letter-spacing="4" id="row2"></text>
+      </svg>
+      <p class="to">3amy Hesham</p>
+      <p class="ar" lang="ar" dir="rtl">كل سنة وانت طيب يا عمي</p>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap cardzone">
+      <div>
+        <p class="kicker" id="kicker">Step 1 of 1</p>
+        <h2 id="title">Make a wish, then blow out the candles</h2>
+        <p class="lead" id="lead">Tap each candle on the cake, or use the button. Something is waiting for you once they're all out.</p>
+        <div class="btns">
+          <button id="blow">Blow out the candles</button>
+          <button id="again" class="ghost">Relight</button>
+          <span class="count" id="count" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="burst">
+        <svg class="rays" id="rays" viewBox="0 0 400 400" aria-hidden="true"></svg>
+        <div class="cakecard">
+          <svg class="cake" viewBox="40 40 340 330" role="img" aria-label="Birthday cake with candles">
+            <defs><radialGradient id="fl" cx="50%" cy="70%" r="60%"><stop offset="0" stop-color="#fff7c2"/><stop offset=".5" stop-color="#ffd23f"/><stop offset="1" stop-color="#ff8a3d"/></radialGradient></defs>
+            <ellipse cx="210" cy="345" rx="170" ry="16" fill="#e8efe9"/>
+            <rect x="68" y="232" width="284" height="106" rx="14" fill="#3d8569"/>
+            <path d="M68 246q0-14 14-14h256q14 0 14 14v8q-10 14-20 0t-20 2-22-2-20 4-24-4-20 6-22-6-20 2-22-2-20 6-20-4-24 2-14 0q-6 0-14-10z" fill="#fbf3dc"/>
+            <g fill="#f3c845"><circle cx="110" cy="300" r="5"/><circle cx="170" cy="312" r="5"/><circle cx="250" cy="312" r="5"/><circle cx="310" cy="300" r="5"/></g>
+            <text x="210" y="306" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="16" fill="#fff">Hesham++</text>
+            <rect x="113" y="152" width="194" height="86" rx="12" fill="#ef7d5a"/>
+            <path d="M113 165q0-13 13-13h168q13 0 13 13v6q-9 12-18 0t-18 4-18-4-18 6-18-6-18 4-18-4-18 6-18-4-14 0q-4 0-10-8z" fill="#fffdf7"/>
+            <text x="210" y="218" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="22" fill="#fff">HBD</text>
+            <g id="candles"></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="reveal">
+    <section class="band msg">
+      <div class="letter">
+        <h2>Happy Birthday, 3amy Hesham!</h2>
+        <p class="ar" lang="ar" dir="rtl" style="margin-bottom:16px">كل سنة وانت طيب يا عمي</p>
+        <p>To the person who made "software engineer" sound like the coolest job in the world: thank you for the advice, the inspiration, and for answering all my "how does this work?" questions.</p>
+        <p>I'm only in first year, so this page probably has a bug or two. Please don't code review it too hard. I hope this year runs fast, never crashes, and is full of good things.</p>
+        <p class="sig">Love, Seif</p>
+      </div>
+    </section>
+    <section class="band wall">
+      <div class="wrap">
+        <h3>Release notes for this year</h3>
+        <div class="notes" id="notes"></div>
+      </div>
+    </section>
+    <footer>Made (and debugged) by Seif</footer>
+  </div>
+</main>
+
+<script>
+{
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // cut-paper letters
+  const pats = ['p1','p2','p3','p4','p5','p6'];
+  const tilt = [-6,4,-3,7,-5,3,-7,5,-2,6,-4,4,-6];
+  let k = 0;
+  const row = (id, word) => document.getElementById(id).innerHTML = [...word].map(ch => {
+    const i = k++;
+    return `<tspan fill="url(#${pats[i % pats.length]})" stroke="#1f2a2a22" stroke-width="2" rotate="${tilt[i % tilt.length]}">${ch}</tspan>`;
+  }).join('');
+  row('row1', 'HAPPY'); row('row2', 'BIRTHDAY');
+
+  // sunburst
+  const rays = document.getElementById('rays');
+  let r = '';
+  for (let i = 0; i < 120; i++) {
+    const a = i / 120 * Math.PI * 2 + Math.sin(i * 7) * 0.02;
+    const r0 = 95 + (i * 37 % 20), r1 = 150 + (i * 53 % 50);
+    r += `<line x1="${200 + Math.cos(a) * r0}" y1="${200 + Math.sin(a) * r0}" x2="${200 + Math.cos(a) * r1}" y2="${200 + Math.sin(a) * r1}" stroke="${i % 3 ? '#4fb39a' : '#3d8569'}" stroke-width="${2 + i % 3}" stroke-linecap="round"/>`;
+  }
+  rays.innerHTML = r;
+
+  // candles
+  const xs = [150, 180, 210, 240, 270], N = xs.length;
+  const g = document.getElementById('candles');
+  g.innerHTML = xs.map((x, i) => `
+    <g class="candle" tabindex="0" role="button" aria-label="Blow out candle ${i + 1}">
+      <rect x="${x - 15}" y="58" width="30" height="96" fill="transparent"/>
+      <rect x="${x - 6}" y="100" width="12" height="54" rx="3" fill="${['#2f6fa8','#f3c845','#3d8569','#ef7d5a','#4fb39a'][i]}"/>
+      <path d="M${x - 6} 112l12 -6M${x - 6} 126l12 -6M${x - 6} 140l12 -6" stroke="#fff9" stroke-width="3"/>
+      <line x1="${x}" y1="100" x2="${x}" y2="92" stroke="#1f2a2a" stroke-width="2"/>
+      <circle class="ring" cx="${x}" cy="82" r="16" fill="none" stroke="none"/>
+      <path class="flame" d="M${x} 66 C${x + 10} 78 ${x + 8} 92 ${x} 93 C${x - 8} 92 ${x - 10} 78 ${x} 66Z" fill="url(#fl)"/>
+      <circle class="smoke" cx="${x}" cy="84" r="5" fill="#bbb"/>
+    </g>`).join('');
+
+  const app = document.getElementById('app'), count = document.getElementById('count');
+  const title = document.getElementById('title'), lead = document.getElementById('lead'), kicker = document.getElementById('kicker');
+  let lit = N, finished = false;
+
+  function update() {
+    count.textContent = lit ? `${lit} candle${lit > 1 ? 's' : ''} left` : 'Wish made!';
+    if (!lit && !finished) finish();
+  }
+  function blow(el) {
+    if (el.classList.contains('out')) return;
+    el.classList.add('out'); el.setAttribute('aria-label', 'Candle blown out');
+    lit--; update();
+  }
+  g.addEventListener('click', e => { const c = e.target.closest('.candle'); if (c) blow(c); });
+  g.addEventListener('keydown', e => {
+    const c = e.target.closest('.candle');
+    if (c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); blow(c); }
+  });
+  document.getElementById('blow').onclick = () =>
+    [...g.querySelectorAll('.candle:not(.out)')].forEach((c, i) => setTimeout(() => blow(c), reduce ? 0 : i * 170));
+  document.getElementById('again').onclick = reset;
+
+  const notes = [
+    ['feat: another year of being the best 3amy', 'c4k3e9a', '#f6d75a'],
+    ['feat: added +1 to age (non-breaking change)', 'b1rthd4', '#9fe0c8'],
+    ['fix: removed all bugs from this year', 'f1x3d42', '#f7a283'],
+    ['feat: unlimited koshari and mahshi', 'k0sh4r1', '#bdf1f6'],
+    ['fix: shai bel na3na3 now always ready', '5h41bn4', '#f6d75a'],
+    ['perf: wisdom now loads 2x faster', 'p3rf0rm', '#9fe0c8']
+  ];
+  document.getElementById('notes').innerHTML = notes.map(([t, h, c]) =>
+    `<div class="note" style="--tape:${c}">${t}<code>${h}</code></div>`).join('');
+
+  function finish() {
+    finished = true;
+    app.classList.add('done');
+    kicker.textContent = 'Wish sent';
+    title.textContent = 'Kol sana w enta tayeb!';
+    lead.textContent = 'Scroll down, there\'s a message for you.';
+    confetti();
+  }
+  function reset() {
+    g.querySelectorAll('.candle').forEach((c, i) => { c.classList.remove('out'); c.setAttribute('aria-label', `Blow out candle ${i + 1}`); });
+    lit = N; finished = false; app.classList.remove('done');
+    kicker.textContent = 'Step 1 of 1';
+    title.textContent = 'Make a wish, then blow out the candles';
+    lead.textContent = 'Tap each candle on the cake, or use the button. Something is waiting for you once they\'re all out.';
+    update();
+  }
+
+  // confetti
+  const cv = document.getElementById('fx'), ctx = cv.getContext('2d');
+  let parts = [], raf = 0;
+  const size = () => { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; };
+  const ro = new ResizeObserver(size); ro.observe(document.body);
+  function confetti() {
+    if (reduce) return;
+    const cols = ['#3d8569', '#4fb39a', '#ef7d5a', '#f3c845', '#2f6fa8', '#bdf1f6'];
+    for (let i = 0; i < 220; i++) parts.push({
+      x: Math.random() * cv.width, y: -Math.random() * cv.height * 0.6,
+      vx: (Math.random() - 0.5) * 3, vy: 2 + Math.random() * 4,
+      s: (4 + Math.random() * 6) * devicePixelRatio, a: Math.random() * 6, va: (Math.random() - 0.5) * 0.3, c: cols[i % cols.length]
+    });
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+  function tick() {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    parts = parts.filter(p => p.y < cv.height + 40);
+    for (const p of parts) {
+      p.x += p.vx * devicePixelRatio; p.y += p.vy * devicePixelRatio; p.a += p.va; p.vy += 0.03;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.fillStyle = p.c;
+      ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); ctx.restore();
+    }
+    raf = parts.length ? requestAnimationFrame(tick) : 0;
+  }
+
+  reset();
+}
+</script>
+</body>
+</html>
